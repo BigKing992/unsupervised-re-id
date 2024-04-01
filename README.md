@@ -1,21 +1,14 @@
 ![Python >=3.5](https://img.shields.io/badge/Python->=3.5-blue.svg)
 ![PyTorch >=1.0](https://img.shields.io/badge/PyTorch->=1.0-yellow.svg)
 
-# Group Sampling
+# Unsupervised reid
 
 > **[Rethinking Sampling Strategies for Unsupervised Person Re-identification](https://doi.org/10.1109/TIP.2022.3224325)**<br>
 > Xumeng Han, Xuehui Yu, Guorong Li, Jian Zhao, Gang Pan, Qixiang Ye, Jianbin Jiao and Zhenjun Han<br>
 > *IEEE Transactions on Image Processing (**TIP**) 2023 ([arXiv:2107.03024](https://arxiv.org/abs/2107.03024))*<br>
 
-## Requirements
 
-### Installation
 
-```shell
-git clone https://github.com/wavinflaghxm/GroupSampling.git
-cd GroupSampling
-python setup.py develop
-```
 
 ### Prepare Datasets
 
@@ -25,7 +18,7 @@ cd examples && mkdir data
 Download the person datasets [Market-1501](https://drive.google.com/file/d/0B8-rUzbwVRk0c054eEozWG9COHM/view), [DukeMTMC-reID](https://arxiv.org/abs/1609.01775), [MSMT17](https://arxiv.org/abs/1711.08565).
 Then unzip them under the directory like:
 ```
-GroupSampling/examples/data
+Unsupervised-re-id/examples/data
 ├── market1501
 │   └── Market-1501-v15.09.15
 ├── dukemtmc
@@ -36,7 +29,6 @@ GroupSampling/examples/data
 
 ## Training
 
-We utilize 1 GTX-2080TI GPU for training.
 
 + Use `--group-n 256` for Market-1501, `--group-n 128` for DukeMTMC-reID, and `--group-n 1024` for MSMT17.
 
@@ -72,23 +64,6 @@ CUDA_VISIBLE_DEVICES=0 python examples/test.py -d market1501 --resume logs/marke
 ```
 
 
-## Results
-![results](figs/results.png)
-
-## Citation
-
-If you find this work useful for your research, please cite:
-```
-@article{han2022rethinking,
-  title={Rethinking Sampling Strategies for Unsupervised Person Re-Identification}, 
-  author={Han, Xumeng and Yu, Xuehui and Li, Guorong and Zhao, Jian and Pan, Gang and Ye, Qixiang and Jiao, Jianbin and Han, Zhenjun},
-  journal={IEEE Transactions on Image Processing}, 
-  year={2023},
-  volume={32},
-  pages={29-42},
-  doi={10.1109/TIP.2022.3224325}}
-```
-
 ## Acknowledgements
 
-Codes are built upon [SpCL](https://github.com/yxgeee/SpCL). Thanks to Yixiao Ge for opening source.
+Codes are built upon [SpCL/GroupSampling]([https://github.com/yxgeee/SpCL](https://github.com/ucas-vg/GroupSampling)). Thanks to Yixiao Ge for opening source.
